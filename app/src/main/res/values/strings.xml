@@ -1,0 +1,21 @@
+<resources>
+    <!-- App name -->
+    <string name="app_name">OOP API Demo</string>
+
+    <!-- Button labels -->
+    <string name="btn_post">Send POST Request</string>
+    <string name="btn_get">Get List</string>
+    <string name="btn_post_save">POST + Save to DB</string>
+    <string name="btn_show_local">Show Local DB</string>
+
+    <!-- Default messages -->
+    <string name="msg_press_button">Press a button to start.</string>
+    <string name="msg_loading_post">Sending POST request...</string>
+    <string name="msg_loading_post_save">Sending POST and saving result locally...</string>
+    <string name="msg_loading_get">Loading data with GET...</string>
+    <string name="msg_db_empty">Local DB is empty.</string>
+
+    <!-- Labels for headers -->
+    <string name="header_get">GET response:</string>
+    <string name="header_post">POST response:</string>
+</resources>

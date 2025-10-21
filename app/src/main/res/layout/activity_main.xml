@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Root layout: ConstraintLayout allows flexible alignment between UI elements -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- ================================
+         BUTTON 1 – POST REQUEST
+         When clicked, triggers AsyncTask that sends JSON data to an API
+         ================================ -->
+    <!-- Purple background color -->
+    <Button
+        android:id="@+id/buttonPost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_post"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#673AB7"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ================================
+         BUTTON 2 – GET REQUEST
+         When clicked, fetches list of posts and displays them below
+         ================================ -->
+    <!-- Slightly darker purple -->
+    <Button
+        android:id="@+id/buttonGet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_get"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#512DA8"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonPost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ================================
+         Button to Save to DB
+         Ensures content POST list is saved to DB
+         ================================ -->
+
+    <Button
+        android:id="@+id/buttonPostSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_post_save"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#1A237E"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonGet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
+
+    <!-- ================================
+      SCROLLVIEW
+      Ensures content inside (TextView) is scrollable
+      Very useful when showing long API responses
+      ================================ -->
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonGet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- ================================
+             TEXTVIEW
+             Displays dynamic results or error messages
+             This is where AsyncTask updates UI
+             ================================ -->
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_press_button"
+            android:textSize="16sp"
+            android:padding="8dp" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
